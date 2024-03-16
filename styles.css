@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+
+    --grayish-blue: hsl(237, 18%, 59%);
+
+    --soft-red: hsl(345, 95%, 68%);
+
+    --white: hsl(0, 0%, 100%);
+    --dark-desaturated-blue: hsl(236, 21%, 26%);
+    --very-dark-blue: hsl(235, 16%, 14%);
+    --very-dark--blackish-blue: hsl(234, 17%, 12%);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+
+    font-family: "Red Hat Text", sans-serif;
+}
+
+body {
+    width: 100vw; 
+    height: 100vh;
+}
+
+.backdrop {
+    background-color: var(--very-dark--blackish-blue);
+    display: flex;
+    flex-direction: column;
+}
+
+.currentTopNumber {
+    position: relative;
+    
+    text-align: center;
+
+    top: 50%;
+    z-index: 1;
+}
+
+.fadeNumber {
+
+    animation: fadeNumber;
+
+    animation-duration: 1s;
+}
+
+.fadeNumberBackwards {
+
+    animation: fadeNumber;
+
+    animation-duration: 1s;
+
+    animation-direction: reverse;
+}
+
+.nextTopNumber {
+    animation: fadeNumber;
+
+    animation-duration: 1s; 
+    animation-direction: reverse;
+
+    opacity: 0;
+}
+
+.topBackground {
+
+    background-color: var(--dark-desaturated-blue);
+
+    filter: brightness(90%);
+
+    z-index: 1;
+}
+
+.bottomBackground {
+
+    display: none;
+
+    background-color: var(--dark-desaturated-blue);
+
+    filter: brightness(110%);
+}
+
+.bottomNumber {
+    position: relative;
+    bottom: 50%;
+    background-color: var(--dark-desaturated-blue);
+
+    text-align: center;
+}
+
+.number {
+    color: var(--soft-red);
+    flex-basis: 150px;
+    width: 150px;
+
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.timeScale {
+    font-weight: normal;
+    color: var(--grayish-blue);
+}
+
+@keyframes fadeNumber {
+
+    0% {
+        opacity: 100;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
